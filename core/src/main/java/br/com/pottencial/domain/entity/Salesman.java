@@ -3,6 +3,7 @@ package br.com.pottencial.domain.entity;
 import br.com.pottencial.domain.Auditable;
 
 import java.util.UUID;
+import java.util.regex.Pattern;
 
 public class Salesman extends AggregateRoot {
 
@@ -57,6 +58,8 @@ public class Salesman extends AggregateRoot {
         if (this.CPF == null) {
             throw new IllegalArgumentException("'CPF' should not be null");
         }
+
+
 
     }
 

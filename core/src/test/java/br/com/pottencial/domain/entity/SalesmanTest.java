@@ -1,6 +1,5 @@
 package br.com.pottencial.domain.entity;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -12,7 +11,7 @@ class SalesmanTest {
 
         // Given
         final var expectedName = "John";
-        final var expectedCpf = "12345678900";
+        final var expectedCpf = "123.456.789-00";
         final var expectedEmail = "jonh@gmail.com";
         final var expectedPhone = "(88) 99797 9990";
 
@@ -44,7 +43,7 @@ class SalesmanTest {
                 assertThrows(RuntimeException.class,
                         () -> Salesman.of(
                                 null,
-                                "12345678900",
+                                "12=y3.456.789-00",
                                 "j@gmail.com",
                                 "(88) 99797 9990"
                         )
@@ -87,6 +86,27 @@ class SalesmanTest {
                         () -> Salesman.of(
                                 "John",
                                 null,
+                                "j@gmail.com",
+                                "(88) 99797 9990"
+                        )
+                );
+
+        // Then
+        assertEquals(expectedErrorMessage, actualException.getMessage());
+
+    }
+
+    @Test
+    void givenAnInvalidRegexCPF_whenCallCreateSalesman_thenThrowDomainException() {
+        // Given
+        final var expectedErrorMessage = "'CPF' should be valid";
+
+        // When
+        final var actualException =
+                assertThrows(RuntimeException.class,
+                        () -> Salesman.of(
+                                "John",
+                                "123.456.08-90",
                                 "j@gmail.com",
                                 "(88) 99797 9990"
                         )
