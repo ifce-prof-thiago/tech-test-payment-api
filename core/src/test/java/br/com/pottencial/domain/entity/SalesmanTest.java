@@ -55,5 +55,26 @@ class SalesmanTest {
 
     }
 
+    @Test
+    void givenAnInvalidEmptyName_whenCallCreateSalesman_thenThrowDomainException() {
+        // Given
+        final var expectedErrorMessage = "'name' should not be blank";
+
+        // When
+        final var actualException =
+                assertThrows(RuntimeException.class,
+                        () -> Salesman.of(
+                                "      ",
+                                "12345678900",
+                                "j@gmail.com",
+                                "(88) 99797 9990"
+                        )
+                );
+
+        // Then
+        assertEquals(expectedErrorMessage, actualException.getMessage());
+
+    }
+
 
 }
