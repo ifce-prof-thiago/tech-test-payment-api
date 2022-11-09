@@ -26,6 +26,8 @@ public class Salesman extends AggregateRoot {
         this.email = email;
         this.phone = phone;
 
+        this.validate();
+
     }
 
     public static Salesman of(
@@ -44,6 +46,11 @@ public class Salesman extends AggregateRoot {
     @Override
     public void validate() {
 
+        if (this.name == null) {
+            throw new IllegalArgumentException("'name' should not be null");
+        }
+
+
     }
 
     public String getName() {
@@ -61,5 +68,5 @@ public class Salesman extends AggregateRoot {
     public String getPhone() {
         return phone;
     }
-    
+
 }
