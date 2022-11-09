@@ -54,6 +54,10 @@ public class Salesman extends AggregateRoot {
             throw new IllegalArgumentException("'name' should not be blank");
         }
 
+        if (this.CPF == null) {
+            throw new IllegalArgumentException("'CPF' should not be null");
+        }
+
     }
 
     public String getName() {
