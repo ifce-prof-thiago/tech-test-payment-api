@@ -1,2 +1,5 @@
 rootProject.name = 'tech-test-payment-api'
+include 'core'
+include 'application'
+include 'infrastructure'
 
