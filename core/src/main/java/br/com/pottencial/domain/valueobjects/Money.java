@@ -43,6 +43,11 @@ public final class Money implements Serializable {
         return Money.of(amount.multiply(other));
     }
 
+    public Money multiply(final int value) {
+        return Money.of(amount.multiply(BigDecimal.valueOf(value)));
+    }
+
+
     public BigDecimal amount() {
         return amount;
     }

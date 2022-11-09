@@ -14,6 +14,7 @@ class SaleItemTest {
         final var expectedQuantity = 10;
         final var expectedPrice = Money.of("10.0");
         final var expectedName = "Product 1";
+        final var expectedTotal = Money.of("100.0");
 
         // When
         final var actualSaleItem = SaleItem.of(
@@ -28,6 +29,7 @@ class SaleItemTest {
         assertEquals(expectedQuantity, actualSaleItem.getQuantity());
         assertEquals(expectedPrice, actualSaleItem.getPrice());
         assertEquals(expectedName, actualSaleItem.getName());
+        assertEquals(expectedTotal, actualSaleItem.getTotal());
 
     }
 
