@@ -19,6 +19,10 @@ public final class Money implements Serializable {
         return new Money(scale(amount));
     }
 
+    public static Money of(final String amount) {
+        return new Money(scale(new BigDecimal(amount)));
+    }
+
     public boolean isGreaterThanZero() {
         return amount.compareTo(BigDecimal.ZERO) > 0;
     }
