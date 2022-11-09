@@ -76,5 +76,26 @@ class SalesmanTest {
 
     }
 
+    @Test
+    void givenAnInvalidNullCPF_whenCallCreateSalesman_thenThrowDomainException() {
+        // Given
+        final var expectedErrorMessage = "'CPF' should not be null";
+
+        // When
+        final var actualException =
+                assertThrows(RuntimeException.class,
+                        () -> Salesman.of(
+                                "John",
+                                null,
+                                "j@gmail.com",
+                                "(88) 99797 9990"
+                        )
+                );
+
+        // Then
+        assertEquals(expectedErrorMessage, actualException.getMessage());
+
+    }
+
 
 }
