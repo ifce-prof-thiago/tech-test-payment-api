@@ -7,6 +7,8 @@ import java.util.regex.Pattern;
 
 public class Salesman extends AggregateRoot {
 
+    private static final Pattern CPF_REGEX = Pattern.compile("^\\d{3}\\.\\d{3}\\.\\d{3}\\-\\d{2}$");
+
     private String name;
     private String CPF;
     private String email;
@@ -59,7 +61,9 @@ public class Salesman extends AggregateRoot {
             throw new IllegalArgumentException("'CPF' should not be null");
         }
 
-
+        if (!this.CPF.matches(CPF_REGEX.pattern())) {
+            throw new RuntimeException("'CPF' should be valid");
+        }
 
     }
 
