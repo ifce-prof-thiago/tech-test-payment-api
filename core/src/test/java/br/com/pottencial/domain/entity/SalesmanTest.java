@@ -28,7 +28,7 @@ class SalesmanTest {
         assertNotNull(actualSalesman);
         assertNotNull(actualSalesman.getId());
         assertEquals(expectedName, actualSalesman.getName());
-        assertEquals(expectedCpf, actualSalesman.getCpf());
+        assertEquals(expectedCpf, actualSalesman.getCPF());
         assertEquals(expectedEmail, actualSalesman.getEmail());
         assertEquals(expectedPhone, actualSalesman.getPhone());
 
