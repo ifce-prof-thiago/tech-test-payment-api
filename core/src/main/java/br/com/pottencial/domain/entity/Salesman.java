@@ -50,6 +50,9 @@ public class Salesman extends AggregateRoot {
             throw new IllegalArgumentException("'name' should not be null");
         }
 
+        if (this.name.isBlank()) {
+            throw new IllegalArgumentException("'name' should not be blank");
+        }
 
     }
 
