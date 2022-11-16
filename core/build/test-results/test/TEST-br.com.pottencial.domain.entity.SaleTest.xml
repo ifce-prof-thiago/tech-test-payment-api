@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="br.com.pottencial.domain.entity.SaleTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-11-16T17:27:34" hostname="thiago" time="0.01">
+<testsuite name="br.com.pottencial.domain.entity.SaleTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-11-16T17:43:57" hostname="thiago" time="0.011">
   <properties/>
-  <testcase name="givenAInvalidQtyItems_whenCreateASale_thenThrowException()" classname="br.com.pottencial.domain.entity.SaleTest" time="0.005"/>
-  <testcase name="givenAValidParams_whenCreateASale_thenReturnASaleCreated()" classname="br.com.pottencial.domain.entity.SaleTest" time="0.003"/>
+  <testcase name="givenAInvalidQtyItems_whenCreateASale_thenThrowException()" classname="br.com.pottencial.domain.entity.SaleTest" time="0.006"/>
+  <testcase name="givenAValidParams_whenCreateASale_thenReturnASaleCreated()" classname="br.com.pottencial.domain.entity.SaleTest" time="0.004"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

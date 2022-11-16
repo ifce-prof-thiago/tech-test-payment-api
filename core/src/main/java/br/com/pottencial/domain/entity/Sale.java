@@ -60,6 +60,54 @@ public class Sale extends AggregateRoot {
                 auditable);
     }
 
+    public void update(final Status status) {
+        switch (status) {
+            case APPROVED -> this.approve();
+            case DELIVERED -> this.deliver();
+            case CANCELED -> this.cancel();
+            case DELIVERED_TO_CARRIER -> this.deliverToCarrier();
+        }
+
+        this.update();
+    }
+
+    private void approve() {
+
+        if (this.status != Status.WAITING_PAYMENT) {
+            throw new RuntimeException("Sale must be in WAITING_PAYMENT status");
+        }
+
+        this.status = Status.APPROVED;
+    }
+
+    private void cancel() {
+
+        if (this.status != Status.WAITING_PAYMENT && this.status != Status.APPROVED) {
+            throw new RuntimeException("Sale must be in WAITING_PAYMENT or APPROVED status");
+        }
+
+        this.status = Status.CANCELED;
+    }
+
+    private void deliverToCarrier() {
+
+        if (this.status != Status.APPROVED) {
+            throw new RuntimeException("Sale must be in APPROVED status");
+        }
+
+        this.status = Status.DELIVERED_TO_CARRIER;
+    }
+
+    private void deliver() {
+
+        if (this.status != Status.DELIVERED_TO_CARRIER) {
+            throw new RuntimeException("Sale must be in DELIVERED_TO_CARRIER status");
+        }
+
+        this.status = Status.DELIVERED;
+    }
+
+
     public Salesman getSalesman() {
         return salesman;
     }
@@ -84,6 +132,6 @@ public class Sale extends AggregateRoot {
     }
 
     public enum Status {
-        WAITING_PAYMENT,
+        WAITING_PAYMENT, APPROVED, CANCELED, DELIVERED_TO_CARRIER, DELIVERED
     }
 }
