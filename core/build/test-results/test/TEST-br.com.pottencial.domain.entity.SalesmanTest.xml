@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="br.com.pottencial.domain.entity.SalesmanTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-11-09T19:40:32" hostname="thiago" time="0.01">
+<testsuite name="br.com.pottencial.domain.entity.SalesmanTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-11-16T17:27:34" hostname="thiago" time="0.017">
   <properties/>
   <testcase name="givenAValidParams_whenCreateASalesman_thenReturnASalesmanCreated()" classname="br.com.pottencial.domain.entity.SalesmanTest" time="0.001"/>
-  <testcase name="givenAnInvalidEmptyName_whenCallCreateSalesman_thenThrowDomainException()" classname="br.com.pottencial.domain.entity.SalesmanTest" time="0.002"/>
-  <testcase name="givenAnInvalidNullName_whenCallCreateSalesman_thenThrowDomainException()" classname="br.com.pottencial.domain.entity.SalesmanTest" time="0.001"/>
-  <testcase name="givenAnInvalidRegexCPF_whenCallCreateSalesman_thenThrowDomainException()" classname="br.com.pottencial.domain.entity.SalesmanTest" time="0.001"/>
-  <testcase name="givenAnInvalidNullCPF_whenCallCreateSalesman_thenThrowDomainException()" classname="br.com.pottencial.domain.entity.SalesmanTest" time="0.001"/>
+  <testcase name="givenAnInvalidEmptyName_whenCallCreateSalesman_thenThrowDomainException()" classname="br.com.pottencial.domain.entity.SalesmanTest" time="0.003"/>
+  <testcase name="givenAnInvalidNullName_whenCallCreateSalesman_thenThrowDomainException()" classname="br.com.pottencial.domain.entity.SalesmanTest" time="0.002"/>
+  <testcase name="givenAnInvalidRegexCPF_whenCallCreateSalesman_thenThrowDomainException()" classname="br.com.pottencial.domain.entity.SalesmanTest" time="0.003"/>
+  <testcase name="givenAnInvalidNullCPF_whenCallCreateSalesman_thenThrowDomainException()" classname="br.com.pottencial.domain.entity.SalesmanTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

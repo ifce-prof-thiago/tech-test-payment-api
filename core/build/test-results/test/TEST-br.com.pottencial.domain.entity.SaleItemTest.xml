@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="br.com.pottencial.domain.entity.SaleItemTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-11-09T19:40:32" hostname="thiago" time="0.02">
+<testsuite name="br.com.pottencial.domain.entity.SaleItemTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-11-16T17:27:34" hostname="thiago" time="0.029">
   <properties/>
-  <testcase name="givenAValidParams_whenCreateASaleItem_thenReturnASaleItemCreated()" classname="br.com.pottencial.domain.entity.SaleItemTest" time="0.02"/>
+  <testcase name="givenAValidParams_whenCreateASaleItem_thenReturnASaleItemCreated()" classname="br.com.pottencial.domain.entity.SaleItemTest" time="0.029"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

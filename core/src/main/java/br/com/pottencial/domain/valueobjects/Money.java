@@ -68,5 +68,4 @@ public final class Money implements Serializable {
     public int hashCode() {
         return Objects.hash(amount);
     }
-
 }

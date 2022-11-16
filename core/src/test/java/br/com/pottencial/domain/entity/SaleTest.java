@@ -5,8 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class SaleTest {
 
@@ -29,7 +28,7 @@ public class SaleTest {
         );
 
         final var expectedStatus = Sale.Status.WAITING_PAYMENT;
-        final var expectedTotal = Money.of("46.00");
+        final var expectedTotal = Money.of("44.00");
 
         // When
         final var actualSale = Sale.of(
@@ -43,9 +42,37 @@ public class SaleTest {
         assertNotNull(actualSale.getId());
         assertEquals(expectedOrderId, actualSale.getOrderId());
         assertEquals(expectedSalesman, actualSale.getSalesman());
-        assertEquals(expectedSaleItems, actualSale.getSaleItems());
+        assertEquals(expectedSaleItems, actualSale.getItems());
         assertEquals(expectedStatus, actualSale.getStatus());
         assertEquals(expectedTotal, actualSale.getTotal());
 
     }
+
+    @Test
+    void givenAInvalidQtyItems_whenCreateASale_thenThrowException() {
+
+        // Given
+        final var expectedMessage = "Sale must have at least one item";
+
+        // When
+        final var actualException =
+                assertThrows(RuntimeException.class,
+                        () -> Sale.of(
+                                "123",
+                                Salesman.of(
+                                        "John",
+                                        "123.456.789-00",
+                                        "jonh@gmail.com",
+                                        "(88) 99797 9990"
+                                ),
+                                List.of()
+                        )
+                );
+
+
+        // Then
+        assertEquals(expectedMessage, actualException.getMessage());
+    }
+
+
 }
