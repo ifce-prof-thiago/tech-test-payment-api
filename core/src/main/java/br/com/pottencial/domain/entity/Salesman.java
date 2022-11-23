@@ -46,6 +46,19 @@ public class Salesman extends AggregateRoot {
 
     }
 
+    public static Salesman of(
+            final String id,
+            final String name,
+            final String CPF,
+            final String email,
+            final String phone) {
+
+        final var auditable = Auditable.of();
+
+        return new Salesman(UUID.fromString(id), name, CPF, email, phone, true, auditable);
+
+    }
+
     @Override
     public void validate() {
 
